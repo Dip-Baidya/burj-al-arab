@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+
     return (
         <div className="login-form">
             <div>
@@ -15,7 +16,7 @@ const Register = () => {
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
-                <p>Already have an Account? <Link to ="/login">log in</Link></p>
+                <p>Already have an Account? <Link to="/login">log in</Link></p>
                 <div>------------or------------</div>
                 <button>Google Sign In</button>
             </div>

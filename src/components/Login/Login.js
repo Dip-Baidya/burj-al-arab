@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 
 const Login = () => {
+    const { signInUsingGoogle } = useAuth();
     return (
         <div className="login-form">
             <div>
@@ -15,9 +17,9 @@ const Login = () => {
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
-                <p>New to Burj Al Arab? <Link to ="/register">Create Account</Link> </p>
+                <p>New to Burj Al Arab? <Link to="/register">Create Account</Link> </p>
                 <div>------------or------------</div>
-                <button>Google Sign In</button>
+                <button onClick={signInUsingGoogle}>Google Sign In</button>
             </div>
 
         </div>
