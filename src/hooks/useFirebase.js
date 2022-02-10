@@ -19,14 +19,7 @@ const useFirebase = () => {
 
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                console.log(user);
-                setUser(result.user);
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+        return signInWithPopup(auth, googleProvider)
     }
 
     useEffect(() => {
@@ -40,7 +33,7 @@ const useFirebase = () => {
     const logout = () => {
         signOut(auth)
             .then(() => {
-                setUser("")
+                setUser({})
             })
             .catch((error) => {
                 setError(error.message);

@@ -11,6 +11,7 @@ import Book from './components/Book/Book';
 import Header from './components/Header/Header';
 import Register from './components/Register/Register';
 import AuthProvider from './components/context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -27,9 +28,12 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/book/:bedType">
+          <PrivateRoute path="/book/:bedType">
             <Book />
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/book">
+            <Book />
+          </PrivateRoute>
           <Route exact path="/">
             <Home />
           </Route>
